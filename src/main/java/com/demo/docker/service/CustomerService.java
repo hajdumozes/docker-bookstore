@@ -4,4 +4,6 @@ import com.demo.docker.entity.Customer;
 
 public interface CustomerService {
     void add(Customer customer);
+
+    Customer findById(long id);
 }

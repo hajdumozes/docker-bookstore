@@ -1,6 +1,7 @@
 package com.demo.docker.service;
 
 import com.demo.docker.entity.Customer;
+import com.demo.docker.exception.RecordNotFoundException;
 import com.demo.docker.repository.CustomerRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -16,5 +17,10 @@ class CustomerServiceImpl implements CustomerService {
     @Override
     public void add(Customer customer) {
         customerRepository.save(customer);
+    }
+
+    @Override
+    public Customer findById(long id) {
+        return customerRepository.findById(id).orElseThrow(RecordNotFoundException::new);
     }
 }
