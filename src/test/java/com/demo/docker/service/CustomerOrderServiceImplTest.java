@@ -89,7 +89,7 @@ class CustomerOrderServiceImplTest {
         // given
         long customerId = 1L;
         List<CustomerOrder> expected = List.of();
-        when(customerOrderRepository.findAllByCustomerId(customerId)).thenReturn(expected);
+        when(customerOrderRepository.findByCustomerId(customerId)).thenReturn(expected);
 
         // when
         List<CustomerOrder> output = customerOrderService.findAllBy(customerId);

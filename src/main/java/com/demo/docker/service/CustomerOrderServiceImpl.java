@@ -31,7 +31,7 @@ class CustomerOrderServiceImpl implements CustomerOrderService {
 
     @Override
     public List<CustomerOrder> findAllBy(long customerId) {
-        return customerOrderRepository.findAllByCustomerId(customerId);
+        return customerOrderRepository.findByCustomerId(customerId);
     }
 
     private Customer getCustomer(long customerId) {
