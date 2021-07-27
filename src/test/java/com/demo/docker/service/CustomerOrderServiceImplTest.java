@@ -83,4 +83,18 @@ class CustomerOrderServiceImplTest {
         // then
         assertThat(output).isEqualTo(customerOrder.getId());
     }
+
+    @Test
+    void findAllBy_shouldReturnWithDbResponse() {
+        // given
+        long customerId = 1L;
+        List<CustomerOrder> expected = List.of();
+        when(customerOrderRepository.findAllByCustomerId(customerId)).thenReturn(expected);
+
+        // when
+        List<CustomerOrder> output = customerOrderService.findAllBy(customerId);
+
+        // then
+        assertThat(output).isEqualTo(expected);
+    }
 }

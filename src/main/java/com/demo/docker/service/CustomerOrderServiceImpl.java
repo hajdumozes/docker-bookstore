@@ -29,6 +29,11 @@ class CustomerOrderServiceImpl implements CustomerOrderService {
         return saved.getId();
     }
 
+    @Override
+    public List<CustomerOrder> findAllBy(long customerId) {
+        return customerOrderRepository.findAllByCustomerId(customerId);
+    }
+
     private Customer getCustomer(long customerId) {
         return customerService.findById(customerId);
     }
