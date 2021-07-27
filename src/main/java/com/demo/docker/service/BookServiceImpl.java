@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -16,5 +18,10 @@ class BookServiceImpl implements BookService {
     @Override
     public void add(Book book) {
         bookRepository.save(book);
+    }
+
+    @Override
+    public List<Book> findAllById(List<Long> ids) {
+        return bookRepository.findAllById(ids);
     }
 }

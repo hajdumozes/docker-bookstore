@@ -6,8 +6,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,5 +36,21 @@ class BookServiceImplTest {
 
         // then
         verify(bookRepository).save(book);
+    }
+
+    @Test
+    void findAllById_shouldReturnDbResult() {
+        // given
+        List<Long> input = List.of(1L, 2L);
+        Book book = new Book();
+        Book otherBook = new Book();
+        List<Book> expected = List.of(book, otherBook);
+        Mockito.when(bookRepository.findAllById(input)).thenReturn(expected);
+
+        // when
+        List<Book> output = bookService.findAllById(input);
+
+        // then
+        assertThat(output).isEqualTo(expected);
     }
 }
