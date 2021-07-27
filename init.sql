@@ -18,7 +18,7 @@ VALUES ('Odyssey');
 INSERT INTO BOOK(title)
 VALUES ('Clean Code');
 
--- Initialize table Customer
+-- Initialize table CUSTOMER
 
 CREATE TABLE CUSTOMER
 (
