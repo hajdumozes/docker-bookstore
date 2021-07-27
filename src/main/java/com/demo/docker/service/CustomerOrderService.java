@@ -1,7 +1,7 @@
 package com.demo.docker.service;
 
-import com.demo.docker.entity.CustomerOrder;
+import java.util.List;
 
 public interface CustomerOrderService {
-    void add(CustomerOrder customerOrder);
+    long add(long customerId, List<Long> bookIds);
 }
