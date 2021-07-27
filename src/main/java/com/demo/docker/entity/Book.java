@@ -1,5 +1,6 @@
 package com.demo.docker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Set;
 
 @Entity
@@ -25,6 +27,7 @@ public class Book {
     @Column(name = "title", nullable = false)
     String title;
 
+    @Transient
     @ManyToMany(mappedBy = "books")
     Set<CustomerOrder> customerOrders;
 }
