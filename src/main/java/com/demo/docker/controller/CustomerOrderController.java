@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +39,12 @@ class CustomerOrderController {
         List<CustomerOrder> orders = customerOrderService.findAllBy(customerId);
         List<CustomerOrderResponse> response = orders.stream().map(this::of).collect(Collectors.toList());
         return ResponseEntity.ok().body(response);
+    }
+
+    @DeleteMapping(value = "/delete/{id}")
+    ResponseEntity<Void> delete(@PathVariable("id") long id) {
+        customerOrderService.delete(id);
+        return ResponseEntity.ok().build();
     }
 
     private CustomerOrderResponse of(CustomerOrder customerOrder) {
