@@ -2,7 +2,7 @@ version: '2'
 
 services:
   app:
-    image: 'docker:latest'
+    image: 'docker-bookstore:latest'
     build:
       context: .
       dockerfile: Dockerfile
