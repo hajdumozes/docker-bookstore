@@ -8,4 +8,6 @@ public interface CustomerOrderService {
     long add(long customerId, List<Long> bookIds);
 
     List<CustomerOrder> findAllBy(long customerId);
+
+    void delete(long id);
 }

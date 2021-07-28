@@ -34,6 +34,11 @@ class CustomerOrderServiceImpl implements CustomerOrderService {
         return customerOrderRepository.findByCustomerId(customerId);
     }
 
+    @Override
+    public void delete(long id) {
+        customerOrderRepository.deleteById(id);
+    }
+
     private Customer getCustomer(long customerId) {
         return customerService.findById(customerId);
     }

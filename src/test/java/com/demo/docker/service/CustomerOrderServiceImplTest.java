@@ -97,4 +97,16 @@ class CustomerOrderServiceImplTest {
         // then
         assertThat(output).isEqualTo(expected);
     }
+
+    @Test
+    void delete_shouldInvokeRepositoryDelete() {
+        // given
+        long customerOrderId = 1L;
+
+        // when
+        customerOrderService.delete(customerOrderId);
+
+        // then
+        verify(customerOrderRepository).deleteById(customerOrderId);
+    }
 }
