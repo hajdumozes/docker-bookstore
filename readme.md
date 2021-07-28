@@ -8,8 +8,8 @@ All commands must be run in root:
 
 ### Initial Databases
 
-Currently, there is no option to add customers or books to the relevant databases.
-To access the order functionality, use the following test data:
+Currently, there is no option to add customers or books to the relevant databases. To access the order functionality,
+use the following test data:
 
 #### Customer
 
@@ -26,3 +26,13 @@ To access the order functionality, use the following test data:
 | 2                                         | Harry Potter and the Philosopher's Stone |
 | 3                                         | Odyssey |
 | 4                                         | Clean Code |
+
+### Environment variables
+
+| Name                                      | Format   | Default value                                      | Comment                                                    |
+|-------------------------------------------|----------|----------------------------------------------------|------------------------------------------------------------|
+| `DATASOURCE_USERNAME`                     | string   |`compose-postgres`                                  | Must match the docker-compose.yml db environment variables |
+| `DATASOURCE_PASSWORD`                     | string   |`compose-postgres`                                  | Must match the docker-compose.yml db environment variables |
+| `DATASOURCE_URL`                          | string   |`jdbc:postgresql://localhost:5432/compose-postgres` | Must match the docker-compose.yml db environment variables |
+| `HIBERNATE_DDL_AUTO`                      | string   | `update`                                           | Options: validate, update, create, create-drop, none       |
+| `SHOW_SQL`                                | boolean   | `false`                                           | Show sql queries on console. Only use it for development   |
