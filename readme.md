@@ -48,3 +48,9 @@ use the following test data:
 | `HIBERNATE_DDL_AUTO`                      | string   | `update`                                           | Options: validate, update, create, create-drop, none       |
 | `SHOW_SQL`                                | boolean  | `false`                                            | Show sql queries on console. Only use it for development   |
 | `SERVER_PORT`                             | int      | `8080`                                             |  |
+
+#### Docker
+
+Docker configuration can be done in `docker-compose.yml`.
+
+Port can be configured in the `ports` property, while other environment variables can be listed under the `environment` property
