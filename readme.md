@@ -46,4 +46,5 @@ use the following test data:
 | `DATASOURCE_PASSWORD`                     | string   |`compose-postgres`                                  | Must match the docker-compose.yml db environment variables |
 | `DATASOURCE_URL`                          | string   |`jdbc:postgresql://localhost:5432/compose-postgres` | Must match the docker-compose.yml db environment variables |
 | `HIBERNATE_DDL_AUTO`                      | string   | `update`                                           | Options: validate, update, create, create-drop, none       |
-| `SHOW_SQL`                                | boolean   | `false`                                           | Show sql queries on console. Only use it for development   |
+| `SHOW_SQL`                                | boolean  | `false`                                            | Show sql queries on console. Only use it for development   |
+| `SERVER_PORT`                             | int      | `8080`                                             |  |
