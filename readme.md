@@ -1,3 +1,14 @@
+### Application
+
+The application provides a REST API to create, list and delete orders in a bookstore.
+
+To use the endpoints available, visit the page:
+`http://${application-url}/swagger-ui.html`
+
+Default value:
+`http://localhost:8080/swagger-ui.html`
+
+
 ### Build
 
 All commands must be run in root:
