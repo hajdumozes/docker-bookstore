@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    username: ${DATASOURCE_USERNAME:compose-postgres}
+    password: ${DATASOURCE_PASSWORD:compose-postgres}
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/compose-postgres}
+  jpa:
+    hibernate.ddl-auto: ${HIBERNATE_DDL_AUTO:update}
+    show-sql: ${SHOW_SQL:false}
